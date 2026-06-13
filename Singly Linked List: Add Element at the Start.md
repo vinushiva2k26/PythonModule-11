@@ -34,8 +34,49 @@ To write a Python program that adds a **new element** at the **start** of a sing
 ---
 
 ## Program
-Add Code Here
-## Sample Output
+
+```python
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def push_front(self, newElement):
+        newNode = Node(newElement)
+        newNode.next = self.head
+        self.head = newNode
+
+    def PrintList(self):
+        if self.head is None:
+            print("The list is empty.")
+            return
+
+        temp = self.head
+        while temp:
+            print(temp.data, end=" ")
+            temp = temp.next
+
+MyList = LinkedList()
+
+MyList.push_front(10)
+MyList.push_front(20)
+MyList.push_front(30)
+MyList.push_front(40)
+
+MyList.PrintList()
+```
+
+## Output
+
+```text
+40 30 20 10
+```
 
 ## Result
+
+Thus, the Python program was successfully executed to add elements at the start of a singly linked list and display the list.
 
